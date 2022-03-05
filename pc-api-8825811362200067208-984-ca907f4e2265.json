@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "pc-api-8825811362200067208-984",
+  "private_key_id": "ca907f4e22650b8ba2b8ceee2a14197825773aff",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCq53/B912QHbwd\nQEhf4p0JN94AYVw0/8sNgw3dmMyh3PZyTP49LiQWCX+/E8J25atCXlYlDYaFqoRi\nMJ0GQjyQJfKMrLOKV/uriAGBZjk74pQmQNroUMKGMRVx4IjpCFFK+HIxvcOxInEs\nGmnaRBYbG3ro61rxdm9QFL0Hwy3p/RO2PAwMm3TWBgSVWQVl4jObACB9b0zEZiXA\nPSdNRkTDaeWy23X9YctUas+8q620I9k+POCtYtnTGtaV/NeQ57GG85qdEMHXbv++\nqjpsBS05Biov7fClnx04lqtkUlf8Nub4C2A1KX4Wk3+2h0bnJyBTNPCnm8s+hX+q\nMub2GGZHAgMBAAECggEABZUTipBmkU3cq8/tDUS9AGS/bvUUf/QC++lV9fEHGMUQ\n6mGIGb4na5jagAad3tMC/w35yQgMvCelCgKwfliCMJXXZa+WcGRjUhJaijwpORgz\njUmnsi2Wd6+kFa4nNVq83QgJzYTMnufobm+xGXIJOXrHpFKxC8YPPhG6AvDlz7No\n12IfQtyQhWyIz1tt/6QBp+laVoSXQ4t+fpF0i8RXCO6y02yzh8zHf4hJ8Y0z0rvx\n6YfZoa2snwSCJ6P22e9PjyhNzd+MnuKf4/BHmIbGpxt2kTmahp+7oYCL6sJNMwO2\na1xYF3qRXuDySEl9rqy0GBerHEHwd15OUB+jrgAVQQKBgQDcJV8kLLlCX/770ZsN\nCgUsJaQFFegx50G3JBeWvfGiahGruI80vIik+uF4XDi5UIs3RTUx3ekYov8M7qQd\n/UDdZoXfdOEMakDBVmAf6rdyjm9mqTp8FpY7VJzvRuTf4TnKx9r11YvPynNZJy7G\n8jmUQP71VbmTax7CWulcaI7UNwKBgQDGvRNIENss4bDSkF6x6Z2SWdA8552xh5Xg\nnE/s5VQjwGHm9+IGg9xX0oGXQZ4U2Fe8+5wSw3C1tFGKz9VHGjWtpI0HMcBFwhls\nGkwSmHWcTgNjsWnl5tyaoJX8xqjetvupu55DfQkhKz2XELAzuA0G1WiLJ4DdqKfV\nfrra9bAWcQKBgQDNYtRztIIWyebjW3fT33BZ8rgmwnyB6mZmDfcv/QAt7dWUpzh8\nFBVMDoBCwY9uXRW1OA1b+9QX1yIrF43oKLnWlWr6wlmgMpU9i29c96e06exHFEVr\nNcttiRBtMHAh60f2xySiTFwHPbMGD0dV9vD/PvBfRV5AiiUFYLntK+NtWwKBgQCd\n+SFggXWXAXdKiNOc3DQSZy3tm7ZvrXTna5jkl44ANSYdMCEMSLhXXs7/6nq72xQy\n9lWjXJM0/DZs/rNrp1vPwSMQ+uz5Bkaq9WROy72BF0n+bsHcq1vj1Y4jtc356r20\nt5wfzT36jaKReAR3t+8y5WQKaMY4a52tSOVCs1TbIQKBgQCMlGqXVboJCncMJvuu\nB06zkwSUkVdCxXCQJ2zDIUIUh2kflnB4PPMDUIIDG8NiNt/beH/KnoCenRrnVFKl\niE0pBKlJX8azC+ziZM43HrJPTQxUZI6K4InvNZHJ2w9VAzL4qR2ssz8QqPWOgsxO\nLCLEbSaeJntJQ1FOrotd3IBa+w==\n-----END PRIVATE KEY-----\n",
+  "client_email": "jagathon-app@pc-api-8825811362200067208-984.iam.gserviceaccount.com",
+  "client_id": "106846371399159428467",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jagathon-app%40pc-api-8825811362200067208-984.iam.gserviceaccount.com"
+}

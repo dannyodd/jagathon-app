@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "413294726213",
+    "firebase_url": "https://jagathon-app.firebaseio.com",
+    "project_id": "jagathon-app",
+    "storage_bucket": "jagathon-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413294726213:android:9efce796f118cd3c24a72c",
+        "android_client_info": {
+          "package_name": "com.iupui.jagathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413294726213-ck26ltn3hmlcaoi74s0ieuv017aubvui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwhBVG95ZtloipcvqwY06spfqohzk3v94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413294726213-ck26ltn3hmlcaoi74s0ieuv017aubvui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
