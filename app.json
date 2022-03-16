@@ -5,13 +5,13 @@
     "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "backgroundColor": "#edc05c",
-    "primaryColor": "#edc05c",
+    "backgroundColor": "#FFFFFF", 
+    "primaryColor": "#FFFFFF", 
     "owner": "jagathon",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#edc05c"
+      "backgroundColor": "#FFFFFF" 
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -31,7 +31,7 @@
     },
     "notification": {
       "icon": "./assets/favicon.png",
-      "color": "#edc05c",
+      "color": "#FFFFFF", 
       "iosDisplayInForeground": true,
       "androidMode": "default"
     },

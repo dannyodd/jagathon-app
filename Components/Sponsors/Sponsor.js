@@ -27,7 +27,7 @@ export default function Sponsor(props) {
 // this component's styling
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: Styles.colorsOp.pink,
+        backgroundColor: Styles.colors.yellow,
         justifyContent: "center",
         alignItems: "center",
         width: 170,

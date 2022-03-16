@@ -52,7 +52,7 @@ export default function Donate({ navigation }) {
                 navigation.navigate("Link", {
                   link: {
                     uri:
-                      "https://events.dancemarathon.com/index.cfm?fuseaction=donorDrive.event&amp;eventID=4001",
+                      "https://events.dancemarathon.com/index.cfm?fuseaction=donorDrive.donate&eventID=4704",
                   },
                 })
               }
@@ -96,7 +96,7 @@ export default function Donate({ navigation }) {
             navigation.navigate("Link", {
               link: {
                 uri:
-                  "https://events.dancemarathon.com/index.cfm?fuseaction=donordrive.participantList&eventID=4001",
+                  "https://events.dancemarathon.com/index.cfm?fuseaction=donordrive.participantList&eventID=4704",
               },
             })
           }
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
   },
   header: {
     alignSelf: "stretch",
-    backgroundColor: Styles.colors.pink,
+    backgroundColor: Styles.colors.red,
     height: 50,
     zIndex: 100,
   },
@@ -209,11 +209,11 @@ const styles = StyleSheet.create({
     color: Styles.colors.white,
     fontSize: 36,
     alignSelf: "stretch",
-    backgroundColor: Styles.colorsOp.pink,
+    backgroundColor: Styles.colors.red,
     zIndex: 100,
     paddingTop: 5,
     paddingLeft: 13,
-    fontFamily: "HoneyCandy",
+    fontFamily: "Coaster",
   },
   headerImage: {
     height: 40,
@@ -223,7 +223,7 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 50,
-    backgroundColor: Styles.colorsOp.purple,
+    backgroundColor: Styles.colors.purple,
     alignItems: "center",
     justifyContent: "center",
     height: 50,
@@ -235,7 +235,7 @@ const styles = StyleSheet.create({
     padding: 30,
     paddingTop: 10,
     paddingBottom: 10,
-    backgroundColor: Styles.colorsOp.pink,
+    backgroundColor: Styles.colors.red,
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -287,9 +287,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
     maxWidth: 550,
     alignSelf: "center",
+    fontFamily: "TimesSS",
   },
   donate: {
-    backgroundColor: Styles.colorsOp.pink,
+    backgroundColor: Styles.colors.red,
     paddingTop: 10,
     width: 200,
     borderRadius: 15,
@@ -304,7 +305,7 @@ const styles = StyleSheet.create({
   },
   button2: {
     height: 50,
-    backgroundColor: Styles.colorsOp.pink,
+    backgroundColor: Styles.colors.red,
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 0,
@@ -312,8 +313,9 @@ const styles = StyleSheet.create({
   },
   linkText: {
     color: Styles.colors.white,
-    fontSize: 18,
-    fontWeight: "bold",
+    fontSize: 33,
+    fontFamily: "HoneyCandy",
+    //fontWeight: "bold",
   },
   socialNav: {
     alignSelf: "stretch",

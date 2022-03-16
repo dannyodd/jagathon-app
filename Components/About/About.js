@@ -217,11 +217,11 @@ const styles = StyleSheet.create({
     color: Styles.colors.white,
     fontSize: 36,
     alignSelf: "stretch",
-    backgroundColor: Styles.colorsOp.purple,
+    backgroundColor: Styles.colors.purple,
     zIndex: 100,
     paddingTop: 5,
     paddingLeft: 13,
-    fontFamily: "HoneyCandy",
+    fontFamily: "Coaster",
   },
   headerImage: {
     height: 40,
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 50,
-    backgroundColor: Styles.colorsOp.purple,
+    backgroundColor: Styles.colors.purple,
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 0,
@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
     padding: 30,
     paddingTop: 15,
     paddingBottom: 15,
-    backgroundColor: Styles.colorsOp.purple,
+    backgroundColor: Styles.colors.purple,
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -262,8 +262,9 @@ const styles = StyleSheet.create({
   },
   linkText: {
     color: Styles.colors.white,
-    fontWeight: "bold",
-    fontSize: 18,
+    //fontWeight: "bold",
+    fontSize: 33,
+    fontFamily: "HoneyCandy",
   },
   socialNav: {
     alignSelf: "stretch",

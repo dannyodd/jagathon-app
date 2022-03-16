@@ -50,15 +50,18 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
-    fontSize: 18,
-    fontWeight: "bold",
+    fontSize: 20,
+    //fontWeight: "bold",
+    fontFamily: "HoneyCandy",
   },
   body: {
     paddingTop: 10,
     paddingBottom: 10,
+    fontFamily: "TimesSS",
   },
   link: {
     color: Styles.colors.purple,
     textDecorationLine: "underline",
+    fontFamily: "TimesSS",
   },
 });

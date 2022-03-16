@@ -318,11 +318,11 @@ const styles = StyleSheet.create({
     color: Styles.colors.white,
     fontSize: 36,
     alignSelf: "stretch",
-    backgroundColor: Styles.colorsOp.cyan,
+    backgroundColor: Styles.colors.cyan,
     zIndex: 100,
     paddingTop: 5,
     paddingLeft: 13,
-    fontFamily: "HoneyCandy",
+    fontFamily: "Coaster",
   },
   calendarBox: {
     // height: 100,
@@ -342,7 +342,7 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 50,
-    backgroundColor: Styles.colorsOp.cyan,
+    backgroundColor: Styles.colors.cyan,
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 0,
@@ -350,8 +350,9 @@ const styles = StyleSheet.create({
   },
   linkText: {
     color: Styles.colors.white,
-    fontSize: 18,
-    fontWeight: "bold",
+    fontSize: 33,
+    //fontWeight: "bold",
+    fontFamily: "HoneyCandy",
   },
   socialNav: {
     alignSelf: "stretch",
@@ -400,13 +401,15 @@ const styles = StyleSheet.create({
   labeller: {
     alignSelf: "stretch",
     height: 45,
-    backgroundColor: Styles.colorsOp.cyan,
+    backgroundColor: Styles.colors.cyan,
     marginTop: 10,
     marginBottom: 10,
     padding: 5,
   },
   labellerText: {
-    fontSize: 20,
+    fontSize: 25,
+    color: Styles.colors.white,
+    fontFamily: "HoneyCandy",
   },
   warningText: {
     fontSize: 20,

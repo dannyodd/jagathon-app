@@ -65,7 +65,7 @@ import { Styles } from "./Styles/Styles";
  */
 
 //ignores specified warnings
-// LogBox.ignoreLogs(["Setting a timer"]);
+LogBox.ignoreLogs(["Setting a timer"]);
 
 /*
  *   end of temp testing code
@@ -73,6 +73,8 @@ import { Styles } from "./Styles/Styles";
 
 let customFonts = {
   HoneyCandy: require("./assets/fonts/HoneyCandy-Regular.ttf"),
+  TimesSS: require("./assets/fonts/TIMESS__.ttf"),
+  Coaster: require("./assets/fonts/CoasterBlack.ttf"),
 };
 /*
  *
@@ -330,6 +332,8 @@ export default function App() {
     async function loadFont() {
       return await Font.loadAsync({
         HoneyCandy: require("./assets/fonts/HoneyCandy-Regular.ttf"),
+        TimesSS: require("./assets/fonts/TIMESS__.ttf"),
+        Coaster: require("./assets/fonts/CoasterBlack.ttf"),
       });
     }
     // after the loading set the font status to true

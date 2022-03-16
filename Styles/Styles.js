@@ -2,23 +2,24 @@
 export const Styles = {
   // regular base colors
   colors: {
-    red: "#e15168",
-    cyan: "#78cfd2",
-    yellow: "#edc05c",
-    blue: "#8dc8ba",
+    red: "#E8698A", //old: #e15168
+    cyan: "#85D3D3", //old: #78cfd2
+    yellow: "#F4CE82", //old: #edc05c
+    blue: "#4E5893", //old: #8dc8ba
     orange: "#ed9780",
-    purple: "#7871b4",
+    purple: "#9F74A8", //old: #7871b4 
     pink: "#e571b4",
     black: "#000000",
-    white: "#454545",
+    white: "#FFFFFF", //old: #454545
     grey: "#ededed",
     greyOp: "#DCDCDC",
+    green: "#74A578",
   },
 
   // lighter versions of colors
   colorsOp: {
     yellow: "#F2D188",
-    yellowOp: "rgba(242, 209, 136, 0.81)",
+    yellowOp: "rgba(244, 206, 130, 0.81)",
     purple: "#BEBAE3",
     pink: "#F1B4D7",
     red: "#F6C3CB",
@@ -32,7 +33,7 @@ export const Styles = {
   // colors with rgba values different from the lighter colors section
   rgba: {
     orange: "rgba(242, 179, 162, 0.8)",
-    blue: "rgba(172, 215, 205, 0.5)",
+    blue: "rgba(78, 88, 147, 0.5)",
     pink: "rgba(241, 180, 215, 0.3)",
   },
 };

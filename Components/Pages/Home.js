@@ -132,7 +132,7 @@ export default function Home({ navigation }) {
             navigation.navigate("Link", {
               link: {
                 uri:
-                  "https://events.dancemarathon.com/index.cfm?fuseaction=register.start&eventID=4001",
+                  "https://events.dancemarathon.com/index.cfm?fuseaction=register.start&eventID=4704",
               },
             })
           }
@@ -140,7 +140,7 @@ export default function Home({ navigation }) {
           <Text style={styles.homeText}> Register </Text>
         </TouchableOpacity>
 
-        {/* dontate button */}
+        {/* donate button */}
         <TouchableOpacity
           style={styles.button}
           accessibilityLabel="Go to the donation page"
@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
   headingText: {
     color: Styles.colors.white,
     fontSize: 36,
-    fontFamily: "HoneyCandy",
+    fontFamily: "Coaster",
     alignSelf: "stretch",
     backgroundColor: Styles.colorsOp.yellowOp,
     textAlign: "center",
@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
   announcements: {
     height: 70,
     margin: 10,
-    backgroundColor: Styles.colorsOp.yellow,
+    backgroundColor: Styles.colors.green,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -291,14 +291,14 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 50,
-    backgroundColor: Styles.colors.cyan,
+    backgroundColor: Styles.colors.red,
     alignItems: "center",
     justifyContent: "center",
     margin: 10,
   },
   button3: {
     height: 50,
-    backgroundColor: Styles.colors.yellow,
+    backgroundColor: Styles.colors.cyan,
     alignItems: "center",
     justifyContent: "center",
     margin: 10,
@@ -339,11 +339,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     height: 50,
+    fontFamily: "HoneyCandy",
   },
   linkText: {
     color: Styles.colors.white,
-    fontWeight: "bold",
-    fontSize: 18,
+    //fontWeight: "bold",
+    fontSize: 33,
+    fontFamily: "HoneyCandy",
   },
   dropShadow: {
     shadowColor: "#000",

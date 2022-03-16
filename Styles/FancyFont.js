@@ -10,6 +10,8 @@ import * as Font from "expo-font";
 const fetchFonts = () => {
   return Font.loadAsync({
     HoneyCandy: require("../assets/fonts/HoneyCandy-Regular.ttf"),
+    TimesSS: require("../assets/fonts/TIMESS__.ttf"),
+    Coaster: require("../assets/fonts/CoasterBlack.ttf"),
   });
 };
 
@@ -26,7 +28,7 @@ export default function FancyFont(props) {
 
   // default styles for our new FancyFont, add the font type
   return (
-    <Text style={[{ fontFamily: "HoneyCandy" }, props.style]}>
+    <Text style={[{ fontFamily: "Coaster" }, props.style]}>
       {props.children}
     </Text>
   );
