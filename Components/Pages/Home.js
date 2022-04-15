@@ -25,6 +25,7 @@ import * as Font from "expo-font";
 
 // import styled text
 import FancyFont from "../../Styles/FancyFont";
+// import { url } from "inspector";
 
 //you must pass navigation into the Home function to use the navigation features
 export default function Home({ navigation }) {
@@ -52,119 +53,38 @@ export default function Home({ navigation }) {
 
   return (
     // entire page wrapped in this view
+
     <View style={styles.container}>
+      <ImageBackground
+      source={require("../../images/home.jpg")}
+      style={styles.backgroundImage}>
+        <View style={styles.overlay}/>
       {/* top bar */}
       <View style={styles.header}>
         {/* logo image */}
         <Image
-          source={require("../../images/jagathonLogo.png")}
+          source={require("../../images/jagathonLogoWhite.png")}
           style={styles.headerImage}
         />
       </View>
-
-      {/* scrollable content of the page - allows top bar to have fixed position */}
-      <ScrollView>
-        {/* home heading image */}
-        <ImageBackground
-          source={require("../../images/home.jpg")}
-          style={styles.heading}
-        >
-          <Text style={styles.headingText}>Welcome!</Text>
-
-          {/* confetti image */}
-          <ImageBackground
-            source={require("../../images/confetti.png")}
-            style={styles.headingImage}
-          />
-        </ImageBackground>
-        {/* blue bar on home page under the image */}
-        <View style={styles.headbar}></View>
-
-        {/* button to go to notifications */}
-        <TouchableOpacity
-          style={styles.announcements}
-          accessibilityLabel="Go to the notification page"
-          onPress={() => navigation.navigate("Notification")}
-        >
-          <Text style={styles.homeText}> Announcements </Text>
-        </TouchableOpacity>
-
-        {/* loop through json events from LiveWhale to get buttons as HomeEvent componeent to go to the Event component page for each event */}
-        {isLoading ? (
-          <Text> Loading... </Text>
-        ) : (
-          data.map((item, key) => {
-            let originalImage = item.thumbnail;
-
-            return (
-              <HomeEvent
-                key={key}
-                title={
-                  item.date2_utc !== undefined
-                    ? item.date2_utc.slice(0, 10) === item.date_utc.slice(0, 10)
-                      ? item.title + " (Day 2)"
-                      : item.title + " (Day 1)"
-                    : item.title
-                }
-                content={item.description}
-                date={getDate(item.date_utc)}
-                reg={
-                  item.custom_registration_link === undefined
-                    ? undefined
-                    : { uri: item.custom_registration_link }
-                }
-                link={{ uri: item.url }}
-                img={
-                  item.thumbnail !== null
-                    ? { uri: originalImage.replace("width/80/height/80/", "") }
-                    : require("../../images/dancePractice.png")
-                }
-              ></HomeEvent>
-            );
+      {/* Main page text content */}
+      <View style={styles.homeBody}>
+        <Text style={styles.homeBodyHeader}>Welcome</Text>
+        <Text style={styles.homeBodyText}>Founded in the 2001-2002 school year, Jagathon has raised over $3 Million for
+          Riley Hospital for Children, Indiana's Children's Miracle Network Hospital.
+        </Text>
+        <Text style={styles.homeBodyLink}
+        onPress={() =>
+          navigation.navigate("Link", {
+            link: { uri: "https://sf.iupui.edu/jagathon/about-us.html" },
           })
-        )}
-
-        {/* register button */}
-        <TouchableOpacity
-          style={styles.button3}
-          accessibilityLabel="Go to the register page for Jagathon"
-          onPress={() =>
-            navigation.navigate("Link", {
-              link: {
-                uri:
-                  "https://events.dancemarathon.com/index.cfm?fuseaction=register.start&eventID=4704",
-              },
-            })
-          }
-        >
-          <Text style={styles.homeText}> Register </Text>
-        </TouchableOpacity>
-
-        {/* donate button */}
-        <TouchableOpacity
-          style={styles.button}
-          accessibilityLabel="Go to the donation page"
-          onPress={() => navigation.navigate("Donate")}
-        >
-          <Text style={styles.homeText}> Donate </Text>
-        </TouchableOpacity>
-
-        {/* Contact Footer bar*/}
-
-        {/* Contact Us button */}
-        <TouchableOpacity
-          style={styles.button2}
-          accessibilityLabel="Go to the contact info page"
-          onPress={() =>
-            navigation.navigate("Link", {
-              link: { uri: "https://sf.iupui.edu/jagathon/contact-us.html" },
-            })
-          }
-        >
-          <Text style={styles.linkText}> Contact Us</Text>
-        </TouchableOpacity>
-
-        {/* bar to hold social media links */}
+        }>Learn more</Text>
+        <Text style={styles.linkText}
+        onPress={() =>
+          navigation.navigate("Link", {
+            link: { uri: "https://sf.iupui.edu/jagathon/contact-us.html" },
+          })
+        }>Contact us</Text>
         <View style={styles.socialNav}>
           {/* twitter */}
           <TouchableOpacity
@@ -226,7 +146,14 @@ export default function Home({ navigation }) {
             />
           </TouchableOpacity>
         </View>
-      </ScrollView>
+      </View>
+
+
+
+              {/* bar to hold social media links */}
+              
+      </ImageBackground>
+      
     </View>
   );
 }
@@ -237,73 +164,61 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     flex: 1,
   },
+  backgroundImage: {
+    flex: 1,
+    width: null,
+    height: null,
+  },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: Styles.colors.red,
+    opacity: 0.6,
+  },
   header: {
     alignSelf: "stretch",
-    backgroundColor: Styles.colors.yellow,
-    height: Platform.OS === "ios" ? 50 + Constants.statusBarHeight : 50,
+    height: Platform.OS === "ios" ? 134 + Constants.statusBarHeight : 134,
     zIndex: 100,
     justifyContent: "center",
   },
   headerImage: {
-    height: 35,
-    width: 150,
+    height: 87,
+    width: 337,
     alignSelf: "center",
     marginTop: Platform.OS === "ios" ? Constants.statusBarHeight - 5 : 0,
   },
-  heading: {
-    alignSelf: "stretch",
-    height: 150,
-    resizeMode: "cover",
+  homeBody: {
+    color: "white",
+    alignSelf: "center",
+    height: "100%",
   },
-  headingText: {
-    color: Styles.colors.white,
-    fontSize: 36,
-    fontFamily: "Coaster",
-    alignSelf: "stretch",
-    backgroundColor: Styles.colorsOp.yellowOp,
+  homeBodyHeader: {
+    color: "white",
+    fontSize: 24,
+    textTransform: "uppercase",
+    alignSelf: "center",
+    fontFamily: "BentonSansBold",
+    marginTop: 175,
+  },
+  homeBodyText: {
+    color: "white",
+    alignSelf: "center",
     textAlign: "center",
-    zIndex: 100,
-    paddingTop: 5,
+    fontFamily: "BentonSansBold",
+    fontSize: 16,
+    marginLeft: "2%",
+    marginRight: "2%",
+    marginTop: 30,
   },
-  headingImage: {
-    height: 250,
-    opacity: 0.6,
-    marginTop: -180,
-  },
-  headbar: {
-    alignSelf: "stretch",
-    backgroundColor: Styles.colors.cyan,
-    height: 50,
-  },
-  announcements: {
-    height: 70,
-    margin: 10,
-    backgroundColor: Styles.colors.green,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  homeText: {
-    color: Styles.colors.white,
-    alignItems: "center",
-    fontSize: 33,
-    paddingTop: 5,
-    fontFamily: "HoneyCandy",
-  },
-  button: {
-    height: 50,
-    backgroundColor: Styles.colors.red,
-    alignItems: "center",
-    justifyContent: "center",
-    margin: 10,
-  },
-  button3: {
-    height: 50,
-    backgroundColor: Styles.colors.cyan,
-    alignItems: "center",
-    justifyContent: "center",
-    margin: 10,
-    marginBottom: 0,
-    marginTop: 0,
+  homeBodyLink: {
+    color: "white",
+    alignSelf: "center",
+    fontFamily: "BentonSansBold",
+    fontSize: 16,
+    marginTop: 40, 
   },
   homeTextShadow: {
     color: Styles.colors.white,
@@ -316,13 +231,16 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     flex: 1,
     flexDirection: "row",
-    backgroundColor: Styles.colors.grey,
     alignItems: "center",
     height: 50,
     padding: 30,
     paddingLeft: 50,
     paddingRight: 50,
     justifyContent: "center",
+    position: "absolute",
+    bottom: 150,
+    left: 0,
+    right: 0,
   },
   socialLink: {
     height: 30,
@@ -333,19 +251,13 @@ const styles = StyleSheet.create({
     height: 30,
     width: 30,
   },
-  button2: {
-    height: 50,
-    backgroundColor: Styles.colorsOp.yellow,
-    alignItems: "center",
-    justifyContent: "center",
-    height: 50,
-    fontFamily: "HoneyCandy",
-  },
   linkText: {
-    color: Styles.colors.white,
-    //fontWeight: "bold",
-    fontSize: 33,
-    fontFamily: "HoneyCandy",
+    color: "white",
+    alignSelf: "center",
+    fontFamily: "BentonSansBold",
+    fontSize: 14,
+    textTransform: "uppercase",
+    marginTop: 200,
   },
   dropShadow: {
     shadowColor: "#000",

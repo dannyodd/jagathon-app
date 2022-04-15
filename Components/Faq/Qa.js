@@ -26,7 +26,7 @@ export default function Qa(props) {
         <Text style={styles.header}>{props.q}</Text>
 
         {/* answer imported from faqs json on Faq */}
-        <Text style={styles.headingText}>{props.a}</Text>
+        <Text style={styles.bodyText}>{props.a}</Text>
       </View>
     </ScrollView>
   );
@@ -39,32 +39,31 @@ const styles = StyleSheet.create({
   },
   header: {
     alignSelf: "stretch",
-    backgroundColor: Styles.colors.blue,
+    backgroundColor: Styles.colors.white,
     minHeight: 30,
-    fontSize: 20,
-    color: Styles.colors.white,
+    fontSize: 14,
+    color: Styles.colors.black,
     zIndex: 100,
-    padding: 20,
+    paddingLeft: 25,
+    paddingRight: 25,
     paddingTop: 10,
     paddingBottom: 10,
-    //fontWeight: "bold",
-    fontFamily: "HoneyCandy",
+    fontFamily: "BentonSansBold",
+    textAlign: "center",
   },
-  headingText: {
+  bodyText: {
     color: Styles.colors.white,
     fontSize: 16,
     alignSelf: "stretch",
-    backgroundColor: Styles.colors.green,
+    backgroundColor: Styles.colors.red,
     zIndex: 100,
-    padding: 5,
-    paddingLeft: 20,
+    paddingTop: 10,
     minHeight: 100,
-    padding: 20,
-    fontFamily: "TimesSS",
+    fontFamily: "BentonSans",
   },
   qBox: {
     margin: 25,
     marginTop: 15,
-    marginBottom: 0,
+    marginBottom: 15,
   },
 });

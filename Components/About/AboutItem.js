@@ -48,20 +48,23 @@ export default function AboutItem(props) {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
+    marginTop: 10,
   },
   title: {
-    fontSize: 20,
-    //fontWeight: "bold",
-    fontFamily: "HoneyCandy",
+    fontSize: 14,
+    fontFamily: "BentonSansBold",
+    color: Styles.colors.white,
   },
   body: {
     paddingTop: 10,
     paddingBottom: 10,
-    fontFamily: "TimesSS",
+    fontFamily: "HelveticaNeue",
+    color: Styles.colors.white,
+    fontSize: 14,
   },
   link: {
-    color: Styles.colors.purple,
-    textDecorationLine: "underline",
-    fontFamily: "TimesSS",
+    color: Styles.colors.white,
+    fontFamily: "BentonSansBold",
+    fontSize: 14,
   },
 });

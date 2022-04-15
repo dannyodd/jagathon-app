@@ -21,18 +21,12 @@ import AboutItem from "./AboutItem";
 //data to loop through to get the about info on the page via AboutItem (object with title, body, and customized link to make the page dynamic)
 const aboutData = [
   {
-    title: "Jagathon: IUPUI's Dance Marathon",
-    body:
-      "Founded in 2001-2002 school year, Jagathon is celebrating it's 20th annual event this year. Last year we raised an all-time high of $607,870.25, For The Kids! The money raised by Jagathon supports the Herman B Wells Center at Riley Hospital for Children, a Children's Miracle Network Hospital.",
-    link: { uri: "https://sf.iupui.edu/jagathon/about-us.html" },
-  },
-  {
     title: "Riley Kids",
     body:
-      "These kids are the reason we do what we do and we want to make sure that they are getting the recognition they deserve for fighting the fight they continue everyday. We hope you remember these stories when you're dancing for 15 hours on March 7th, 2020.",
+      "These kids are the reason we do what we do and we want to make sure that they are getting the recognition they deserve for fighting the fight they continue everyday. We hope you remember these stories when you're dancing for 15 hours on March 26th, 2022.",
     link: {
       uri:
-        "https://events.dancemarathon.com/index.cfm?fuseaction=register.start&eventID=4001",
+        "https://events.dancemarathon.com/index.cfm?fuseaction=donorDrive.event&eventID=4704",
     },
   },
   {
@@ -49,23 +43,17 @@ export default function About({ navigation }) {
     // entire page wrapped in this view
     <View style={styles.container}>
       {/* bars at the top */}
-      <View style={styles.header}></View>
-      <View>
-        <Text style={styles.headingText}>About</Text>
+      <View style={styles.header}>
+        {/* logo image */}
+        <Image
+          source={require("../../images/jagathonLogoWhite.png")}
+          style={styles.headerImage}
+        />
       </View>
 
       {/* scrollable content of the page - allows top bar to have fixed position */}
       <ScrollView>
-        {/* about image heading */}
-        <ImageBackground
-          source={require("../../images/about.jpg")}
-          style={styles.heading}
-        >
-          <Image
-            source={require("../../images/Jagathon2018TaglineWhite2.png")}
-            style={styles.headerImage}
-          />
-        </ImageBackground>
+        <Text style={styles.aboutTitle}>About Us</Text>
 
         {/* loop through the about data and return an about item using the props fiven from aboutData*/}
         {aboutData.map((item, key) => {
@@ -94,13 +82,8 @@ export default function About({ navigation }) {
           onPress={() => navigation.navigate("Faq")}
         >
           <View style={styles.linkTextContainer}>
-            <Text style={styles.linkText}> FAQ's </Text>
+            <Text style={styles.linkText}> Read our FAQs </Text>
           </View>
-          <Image
-            source={require("../../images/Arrow5.png")}
-            style={styles.arrowImage}
-            resizeMode="contain"
-          />
         </TouchableOpacity>
 
         {/* Sponsor button */}
@@ -110,92 +93,9 @@ export default function About({ navigation }) {
           onPress={() => navigation.navigate("Sponsors")}
         >
           <View style={styles.linkTextContainer}>
-            <Text style={styles.linkText}> Sponsors </Text>
+            <Text style={styles.linkText}> See our sponsors </Text>
           </View>
-          <Image
-            source={require("../../images/Arrow5.png")}
-            style={styles.arrowImage}
-            resizeMode="contain"
-          />
         </TouchableOpacity>
-
-        {/* Contact Footer bar*/}
-
-        {/* Contact Us button */}
-        <TouchableOpacity
-          style={styles.button}
-          accessibilityLabel="Go to the contact info page"
-          onPress={() =>
-            navigation.navigate("Link", {
-              link: { uri: "https://sf.iupui.edu/jagathon/contact-us.html" },
-            })
-          }
-        >
-          <Text style={styles.linkText}> Contact Us</Text>
-        </TouchableOpacity>
-
-        {/* bar to hold social media links */}
-        <View style={styles.socialNav}>
-          {/* twitter */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://twitter.com/IUPUIdm" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/twittericon.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Facebook */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://www.facebook.com/JagathonIUPUI/" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/facebook.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Instagram */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://www.instagram.com/iupuidm/" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/instagramicon.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Website */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://sf.iupui.edu/jagathon/index.html" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/iu.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-        </View>
       </ScrollView>
     </View>
   );
@@ -206,41 +106,26 @@ const styles = StyleSheet.create({
   container: {
     alignSelf: "stretch",
     flex: 1,
+    backgroundColor: Styles.colors.red,
   },
   header: {
     alignSelf: "stretch",
-    backgroundColor: Styles.colors.purple,
-    height: 50,
+    height: Platform.OS === "ios" ? 134 + Constants.statusBarHeight : 134,
     zIndex: 100,
-  },
-  headingText: {
-    color: Styles.colors.white,
-    fontSize: 36,
-    alignSelf: "stretch",
-    backgroundColor: Styles.colors.purple,
-    zIndex: 100,
-    paddingTop: 5,
-    paddingLeft: 13,
-    fontFamily: "Coaster",
+    justifyContent: "center",
   },
   headerImage: {
-    height: 40,
-    width: 160,
+    height: 87,
+    width: 337,
     alignSelf: "center",
-    marginBottom: 5,
+    marginTop: Platform.OS === "ios" ? Constants.statusBarHeight - 5 : 0,
   },
-  heading: {
-    alignSelf: "stretch",
-    height: 200,
-    resizeMode: "cover",
-    justifyContent: "flex-end",
-  },
-  button: {
-    height: 50,
-    backgroundColor: Styles.colors.purple,
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 0,
+  aboutTitle: {
+    color: Styles.colors.white,
+    fontFamily: "BentonSansBold",
+    fontSize: 24,
+    textTransform: "uppercase",
+    alignSelf: "center",
     marginTop: 20,
   },
   link: {
@@ -252,52 +137,17 @@ const styles = StyleSheet.create({
     padding: 30,
     paddingTop: 15,
     paddingBottom: 15,
-    backgroundColor: Styles.colors.purple,
+    backgroundColor: Styles.colors.white,
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
   },
   linkTextContainer: {
     paddingTop: 4,
   },
   linkText: {
-    color: Styles.colors.white,
-    //fontWeight: "bold",
-    fontSize: 33,
-    fontFamily: "HoneyCandy",
-  },
-  socialNav: {
-    alignSelf: "stretch",
-    flex: 1,
-    flexDirection: "row",
-    backgroundColor: Styles.colors.grey,
-    alignItems: "center",
-    height: 50,
-    padding: 30,
-    paddingLeft: 50,
-    paddingRight: 50,
-    justifyContent: "center",
-  },
-  socialLink: {
-    height: 30,
-    width: 30,
-    margin: 10,
-  },
-  socialImage: {
-    height: 30,
-    width: 30,
-  },
-  arrowImage: {
-    width: 50,
-    alignSelf: "center",
-  },
-  moreLink: {
-    color: Styles.colors.white,
-    textDecorationLine: "underline",
-    fontSize: 20,
-    fontWeight: "bold",
-    margin: 10,
-    marginTop: 0,
-    marginLeft: 20,
+    fontSize: 18,
+    fontFamily: "BentonSansBold",
+    color: Styles.colors.black,
   },
 });

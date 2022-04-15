@@ -12,6 +12,8 @@ const fetchFonts = () => {
     HoneyCandy: require("../assets/fonts/HoneyCandy-Regular.ttf"),
     TimesSS: require("../assets/fonts/TIMESS__.ttf"),
     Coaster: require("../assets/fonts/CoasterBlack.ttf"),
+    BentonSansBold: require("../assets/fonts/BentonSans_Bold.otf"),
+    BentonSans: require("../assets/fonts/BentonSans_Regular.otf"),
   });
 };
 

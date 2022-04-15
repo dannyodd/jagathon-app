@@ -75,6 +75,9 @@ let customFonts = {
   HoneyCandy: require("./assets/fonts/HoneyCandy-Regular.ttf"),
   TimesSS: require("./assets/fonts/TIMESS__.ttf"),
   Coaster: require("./assets/fonts/CoasterBlack.ttf"),
+  BentonSansBold: require("./assets/fonts/BentonSans_Bold.otf"),
+  BentonSans: require("./assets/fonts/BentonSans_Regular.otf"),
+  HelveticaNeue: require("./assets/fonts/HelveticaNeue.ttf"),
 };
 /*
  *
@@ -334,6 +337,9 @@ export default function App() {
         HoneyCandy: require("./assets/fonts/HoneyCandy-Regular.ttf"),
         TimesSS: require("./assets/fonts/TIMESS__.ttf"),
         Coaster: require("./assets/fonts/CoasterBlack.ttf"),
+        BentonSansBold: require("./assets/fonts/BentonSans_Bold.otf"),
+        BentonSans: require("./assets/fonts/BentonSans_Regular.otf"),
+        HelveticaNeue: require("./assets/fonts/HelveticaNeue.ttf"),
       });
     }
     // after the loading set the font status to true
@@ -400,6 +406,11 @@ export default function App() {
             options={{ title: "Home" }}
           />
           <Tab.Screen
+            name="About"
+            component={About}
+            options={{ title: "About" }}
+          />
+          <Tab.Screen
             name="Calendar"
             component={Calendar}
             options={{ title: "Calendar" }}
@@ -409,15 +420,11 @@ export default function App() {
             component={Donate}
             options={{ title: "Donate" }}
           />
-          <Tab.Screen
-            name="About"
-            component={About}
-            options={{ title: "About" }}
-          />
+
           <Tab.Screen
             name="Notification"
             component={NotificationsScreen}
-            options={{ title: "Notifications" }}
+            options={{ title: "Announcements" }}
           />
         </Tab.Navigator>
 

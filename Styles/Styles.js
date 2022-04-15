@@ -2,7 +2,7 @@
 export const Styles = {
   // regular base colors
   colors: {
-    red: "#E8698A", //old: #e15168
+    red: "#A83D4A",
     cyan: "#85D3D3", //old: #78cfd2
     yellow: "#F4CE82", //old: #edc05c
     blue: "#4E5893", //old: #8dc8ba

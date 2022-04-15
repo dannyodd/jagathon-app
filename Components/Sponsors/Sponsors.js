@@ -25,7 +25,6 @@ const sponsors = [
   require("../../images/logo_imcu.png"),
   require("../../images/logo_loves.png"),
   require("../../images/logo_pvg.png"),
-  require("../../images/logo_regions.jpg"),
   require("../../images/logo_vivio.png"),
   require("../../images/logo_iupui_admission.png"),
   require("../../images/logo_iupui_athletic.png"),
@@ -38,6 +37,7 @@ const sponsors = [
   require("../../images/logo_iupui_soic.png"),
   require("../../images/logo_iupui_ulib.png"),
   require("../../images/logo_iupui_usg.png"),
+  require("../../images/logo_iupui_rmfair.jpeg"),
 ];
 
 //you must pass navigation into the Sponsors function in order to use the features
@@ -46,19 +46,24 @@ export default function Sponsors({ navigation }) {
     // entire page wrapped in this view
     <View style={styles.container}>
       {/* top bar */}
-      <View style={styles.header}></View>
-      <View>
-        <Text style={styles.headingText}>Sponsors</Text>
+      <View style={styles.header}>
+        {/* logo image */}
+        <Image
+          source={require("../../images/jagathonLogoWhite.png")}
+          style={styles.headerImage}
+        />
       </View>
 
       {/* scrollable content of the page - allows top bar to have fixed position */}
       <ScrollView>
         {/* intro stuff about sponsors */}
         <View style={styles.intro}>
-          <Text style={styles.introTitle}>Sponsors</Text>
-          <Text style={styles.introText}>
+          <Text style={styles.introTitle}>
             Jagathon is immensely grateful for all who join the fight for
-            pediatric research innovations.{" "}
+            pediatric research innovations.
+          </Text>
+          <Text style={styles.introText}>
+            Thank you to our sponsors!
           </Text>
         </View>
 
@@ -67,96 +72,6 @@ export default function Sponsors({ navigation }) {
           {sponsors.map((item, key) => {
             return <Sponsor key={key} img={item}></Sponsor>;
           })}
-        </View>
-
-        <TouchableOpacity
-          accessibilityLabel="Learn more about Jagathon sponsors"
-          onPress={() =>
-            navigation.navigate("Link", {
-              link: { uri: "https://sf.iupui.edu/jagathon/partnerships.html" },
-            })
-          }
-          style={styles.moreButton}
-        >
-          <Text style={styles.moreLink}>More about our sponsors </Text>
-        </TouchableOpacity>
-
-        {/* Contact Footer bar*/}
-
-        {/* Contact Us button */}
-        <TouchableOpacity
-          style={styles.button}
-          accessibilityLabel="Go to the contact info page"
-          onPress={() =>
-            navigation.navigate("Link", {
-              link: { uri: "https://sf.iupui.edu/jagathon/contact-us.html" },
-            })
-          }
-        >
-          <Text style={styles.linkText}> Contact Us</Text>
-        </TouchableOpacity>
-
-        {/* bar to hold social media links */}
-        <View style={styles.socialNav}>
-          {/* twitter */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://twitter.com/IUPUIdm" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/twittericon.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Facebook */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://www.facebook.com/JagathonIUPUI/" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/facebook.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Instagram */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://www.instagram.com/iupuidm/" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/instagramicon.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Website */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://sf.iupui.edu/jagathon/index.html" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/iu.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>
@@ -168,96 +83,49 @@ const styles = StyleSheet.create({
   container: {
     alignSelf: "stretch",
     flex: 1,
+    backgroundColor: Styles.colors.red,
   },
   header: {
     alignSelf: "stretch",
-    backgroundColor: Styles.colors.yellow,
-    height: 50,
+    height: Platform.OS === "ios" ? 134 + Constants.statusBarHeight : 134,
     zIndex: 100,
+    justifyContent: "center",
   },
-  headingText: {
-    color: Styles.colors.white,
-    fontSize: 36,
-    alignSelf: "stretch",
-    backgroundColor: Styles.colors.yellow,
-    zIndex: 100,
-    paddingTop: 5,
-    paddingLeft: 13,
-    fontFamily: "Coaster",
+  headerImage: {
+    height: 87,
+    width: 337,
+    alignSelf: "center",
+    marginTop: Platform.OS === "ios" ? Constants.statusBarHeight - 5 : 0,
   },
   intro: {
     minHeight: 80,
     margin: 20,
     marginLeft: 25,
     marginRight: 25,
-    backgroundColor: Styles.colors.yellow,
     alignSelf: "center",
     padding: 20,
   },
   introTitle: {
-    color: Styles.colors.black,
-    fontSize: 30,
-    //fontWeight: "bold",
-    fontFamily: "HoneyCandy",
+    color: Styles.colors.white,
+    fontSize: 16,
+    fontFamily: "BentonSansBold",
+    textAlign: "center",
   },
   introText: {
-    color: Styles.colors.black,
-    fontSize: 16,
+    color: Styles.colors.white,
+    fontSize: 14,
     marginTop: 10,
-    fontFamily: "TimesSS",
+    fontFamily: "BentonSans",
+    textAlign: "center",
   },
   sponsorsBox: {
     flex: 1,
     alignContent: "stretch",
     justifyContent: "center",
     margin: 10,
-    flexDirection: "row",
-    flexWrap: "wrap",
-  },
-  button: {
-    height: 50,
-    backgroundColor: Styles.colors.yellow,
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 0,
-  },
-  linkText: {
-    color: Styles.colors.white,
-    fontSize: 33,
-    //fontWeight: "bold",
-    fontFamily: "HoneyCandy",
-  },
-  socialNav: {
-    alignSelf: "stretch",
-    flex: 1,
-    flexDirection: "row",
-    backgroundColor: Styles.colors.grey,
-    alignItems: "center",
-    height: 50,
-    padding: 30,
-    paddingLeft: 50,
-    paddingRight: 50,
-    justifyContent: "center",
-  },
-  socialLink: {
-    height: 30,
-    width: 30,
-    margin: 10,
-  },
-  socialImage: {
-    height: 30,
-    width: 30,
-  },
-  moreButton: {
-    backgroundColor: Styles.colorsOp.yellowOp,
-    paddingTop: 18,
-    paddingBottom: 20,
-  },
-  moreLink: {
-    color: Styles.colors.white,
-    textDecorationLine: "underline",
-    fontSize: 33,
-    textAlign: "center",
-    fontFamily: "HoneyCandy",
+    marginLeft: 40,
+    marginRight: 40,
+    flexDirection: "column",
+    backgroundColor: Styles.colors.white,
   },
 });

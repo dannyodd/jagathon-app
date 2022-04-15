@@ -27,18 +27,17 @@ export default function Sponsor(props) {
 // this component's styling
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: Styles.colors.yellow,
         justifyContent: "center",
         alignItems: "center",
-        width: 170,
-        height: 100,
+        // width: "100%",
+        // height: 100,
         margin: 10,
         alignSelf: "center",
     },
     sponsor: {
         alignSelf: "center",
         height: 90,
-        width: 120,
+        width: 200,
         resizeMode: "contain",
     }
 });    
