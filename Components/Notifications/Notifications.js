@@ -59,20 +59,6 @@ export default function Notifications({ navigation }) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
 
-      // format the date from LiveWhale
-  const getDate = (fullDate) => {
-    var formattedDate = new Date(fullDate);
-    var date = formattedDate.getDate();
-    var month = formattedDate.getMonth() + 1;
-    var year = formattedDate.getFullYear();
-    if (month < 10) {
-      month = "0" + month.toString();
-    }
-    if (date < 10) {
-      date = "0" + date.toString();
-    }
-    return month + "/" + date + "/" + year;
-  };
 
   // hook to cause Firebase data to be fetched
   useEffect(() => {
@@ -97,8 +83,14 @@ export default function Notifications({ navigation }) {
 
     return (
       <View style={styles.container}>
-        {/* top bars */}
-        <View style={styles.header}></View>
+              {/* top bar */}
+        <View style={styles.header}>
+          {/* logo image */}
+          <Image
+            source={require("../../images/jagathonLogoWhite.png")}
+            style={styles.headerImage}
+          />
+        </View>
         <View>
           <Text style={styles.headingText}>Notifications</Text>
         </View>
@@ -108,85 +100,7 @@ export default function Notifications({ navigation }) {
           {/* If loaded, loop through json data of notifications to display needed info in the Notification component */}
 
           <Text style={styles.linkText}> Loading... </Text>
-
   
-          {/* Contact Footer bar*/}
-  
-          {/* Contact Us button */}
-          <TouchableOpacity
-            style={styles.button}
-            accessibilityLabel="Go to the contact info page"
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://sf.iupui.edu/jagathon/contact-us.html" },
-              })
-            }
-          >
-            <Text style={styles.linkText}> Contact Us</Text>
-          </TouchableOpacity>
-  
-          {/* bar to hold social media links */}
-          <View style={styles.socialNav}>
-            {/* twitter */}
-            <TouchableOpacity
-              style={styles.socialLink}
-              onPress={() =>
-                navigation.navigate("Link", {
-                  link: { uri: "https://twitter.com/IUPUIdm" },
-                })
-              }
-            >
-              <Image
-                source={require("../../images/twittericon.png")}
-                style={styles.socialImage}
-              />
-            </TouchableOpacity>
-  
-            {/* Facebook */}
-            <TouchableOpacity
-              style={styles.socialLink}
-              onPress={() =>
-                navigation.navigate("Link", {
-                  link: { uri: "https://www.facebook.com/JagathonIUPUI/" },
-                })
-              }
-            >
-              <Image
-                source={require("../../images/facebook.png")}
-                style={styles.socialImage}
-              />
-            </TouchableOpacity>
-  
-            {/* Instagram */}
-            <TouchableOpacity
-              style={styles.socialLink}
-              onPress={() =>
-                navigation.navigate("Link", {
-                  link: { uri: "https://www.instagram.com/iupuidm/" },
-                })
-              }
-            >
-              <Image
-                source={require("../../images/instagramicon.png")}
-                style={styles.socialImage}
-              />
-            </TouchableOpacity>
-  
-            {/* Website */}
-            <TouchableOpacity
-              style={styles.socialLink}
-              onPress={() =>
-                navigation.navigate("Link", {
-                  link: { uri: "https://sf.iupui.edu/jagathon/index.html" },
-                })
-              }
-            >
-              <Image
-                source={require("../../images/iu.png")}
-                style={styles.socialImage}
-              />
-            </TouchableOpacity>
-          </View>
         </ScrollView>
       </View>
     );
@@ -197,10 +111,16 @@ export default function Notifications({ navigation }) {
 
     return (
       <View style={styles.container}>
-        {/* top bars */}
-        <View style={styles.header}></View>
+              {/* top bar */}
+        <View style={styles.header}>
+          {/* logo image */}
+          <Image
+            source={require("../../images/jagathonLogoWhite.png")}
+            style={styles.headerImage}
+          />
+        </View>
         <View>
-          <Text style={styles.headingText}>Notifications</Text>
+          <Text style={styles.headingText}>Announcements</Text>
         </View>
   
         {/* scrollable content of the page - allows top bar to have fixed position */}
@@ -212,88 +132,10 @@ export default function Notifications({ navigation }) {
                 key={key}
                 title={item.title}
                 content={item.text}
-                date={getDate(item.date.toDate())}
               ></Notification>
             );
           })}
   
-          {/* Contact Footer bar*/}
-  
-          {/* Contact Us button */}
-          <TouchableOpacity
-            style={styles.button}
-            accessibilityLabel="Go to the contact info page"
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://sf.iupui.edu/jagathon/contact-us.html" },
-              })
-            }
-          >
-            <Text style={styles.linkText}> Contact Us</Text>
-          </TouchableOpacity>
-  
-          {/* bar to hold social media links */}
-          <View style={styles.socialNav}>
-            {/* twitter */}
-            <TouchableOpacity
-              style={styles.socialLink}
-              onPress={() =>
-                navigation.navigate("Link", {
-                  link: { uri: "https://twitter.com/IUPUIdm" },
-                })
-              }
-            >
-              <Image
-                source={require("../../images/twittericon.png")}
-                style={styles.socialImage}
-              />
-            </TouchableOpacity>
-  
-            {/* Facebook */}
-            <TouchableOpacity
-              style={styles.socialLink}
-              onPress={() =>
-                navigation.navigate("Link", {
-                  link: { uri: "https://www.facebook.com/JagathonIUPUI/" },
-                })
-              }
-            >
-              <Image
-                source={require("../../images/facebook.png")}
-                style={styles.socialImage}
-              />
-            </TouchableOpacity>
-  
-            {/* Instagram */}
-            <TouchableOpacity
-              style={styles.socialLink}
-              onPress={() =>
-                navigation.navigate("Link", {
-                  link: { uri: "https://www.instagram.com/iupuidm/" },
-                })
-              }
-            >
-              <Image
-                source={require("../../images/instagramicon.png")}
-                style={styles.socialImage}
-              />
-            </TouchableOpacity>
-  
-            {/* Website */}
-            <TouchableOpacity
-              style={styles.socialLink}
-              onPress={() =>
-                navigation.navigate("Link", {
-                  link: { uri: "https://sf.iupui.edu/jagathon/index.html" },
-                })
-              }
-            >
-              <Image
-                source={require("../../images/iu.png")}
-                style={styles.socialImage}
-              />
-            </TouchableOpacity>
-          </View>
         </ScrollView>
       </View>
     );
@@ -308,56 +150,33 @@ const styles = StyleSheet.create({
   container: {
     alignSelf: "stretch",
     flex: 1,
+    backgroundColor: Styles.colors.yellow,
   },
   header: {
     alignSelf: "stretch",
-    backgroundColor: Styles.colors.green,
-    height: 50,
+    height: Platform.OS === "ios" ? 134 + Constants.statusBarHeight : 134,
     zIndex: 100,
+    justifyContent: "center",
+  },
+  headerImage: {
+    height: 87,
+    width: 337,
+    alignSelf: "center",
+    marginTop: Platform.OS === "ios" ? Constants.statusBarHeight - 5 : 0,
   },
   headingText: {
     color: Styles.colors.white,
-    fontSize: 36,
-    alignSelf: "stretch",
-    backgroundColor: Styles.colors.green,
-    zIndex: 100,
-    paddingTop: 5,
-    paddingLeft: 13,
-    fontFamily: "Coaster",
-  },
-  button: {
-    height: 50,
-    backgroundColor: Styles.colors.green,
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 0,
+    fontFamily: "BentonSansBold",
+    fontSize: 24,
+    textTransform: "uppercase",
+    alignSelf: "center",
     marginTop: 20,
+    marginBottom: 20,
   },
   linkText: {
     color: Styles.colors.white,
-    //fontWeight: "bold",
-    fontSize: 33,
-    fontFamily: "HoneyCandy",
-  },
-  socialNav: {
-    alignSelf: "stretch",
-    flex: 1,
-    flexDirection: "row",
-    backgroundColor: Styles.colors.grey,
-    alignItems: "center",
-    height: 50,
-    padding: 30,
-    paddingLeft: 50,
-    paddingRight: 50,
-    justifyContent: "center",
-  },
-  socialLink: {
-    height: 30,
-    width: 30,
-    margin: 10,
-  },
-  socialImage: {
-    height: 30,
-    width: 30,
+    fontSize: 14,
+    fontFamily: "BentonSansBold",
+    textAlign: "center",
   },
 });

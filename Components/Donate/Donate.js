@@ -22,31 +22,30 @@ export default function Donate({ navigation }) {
     // entire page wrapped in this view
     <View style={styles.container}>
       {/* top of the component/two color bars */}
-      <View style={styles.header}></View>
-      <View>
-        <Text style={styles.headingText}>Fundraise</Text>
+      <View style={styles.header}>
+        {/* logo image */}
+        <Image
+          source={require("../../images/jagathonLogoWhite.png")}
+          style={styles.headerImage}
+        />
       </View>
 
       {/* scrollable content of the page - allows top bar to have fixed position */}
       <ScrollView>
         {/* Styles to put the image on the right on wider screens */}
-        <View style={styles.tabletFlex}>
-          {/* donation image at the top of the page */}
-          <ImageBackground
-            source={require("../../images/donation.jpg")}
-            style={styles.heading}
-          ></ImageBackground>
+        
+        <Text style={styles.title}>Fundraising</Text>
 
           <View style={styles.donateContainer}>
             <Text style={styles.donateText}>
-              Whether it's five dollars, or five hundred dollars, all the money
-              raised goes towards our kids and we are forever grateful for every
-              donation.
+                Whether it's five dollars, or five hundred dollars, all the money
+                raised goes towards our kids and we are forever grateful for every
+                donation.
             </Text>
 
             {/* donor drive login btton */}
             <TouchableOpacity
-              style={styles.donate}
+              style={styles.link}
               accessibilityLabel="Go to the donate page"
               onPress={() =>
                 navigation.navigate("Link", {
@@ -57,18 +56,17 @@ export default function Donate({ navigation }) {
                 })
               }
             >
-              <Text style={styles.donateButton}> Donate </Text>
+              <View style={styles.linkTextContainer}>
+                <Text style={styles.linkText}>Make a Donation</Text>
+              </View>
             </TouchableOpacity>
-
-            {/* confetti picture */}
-            <ImageBackground
-              source={require("../../images/confetti.png")}
-              style={styles.headingImage}
-            />
           </View>
-        </View>
-
-        {/* fundraising tips button */}
+        
+        <View style={styles.donateLinksContainer}>
+        <Text style={styles.donateLinksText}>
+                To learn more about fundraising for Jagathon, click the links below.
+            </Text>
+              {/* fundraising tips button */}
         <TouchableOpacity
           style={styles.link}
           accessibilityLabel="Go to the fundraising tips page"
@@ -79,13 +77,9 @@ export default function Donate({ navigation }) {
           }
         >
           <View style={styles.linkTextContainer}>
-            <Text style={styles.linkText}> Fundraising Tips </Text>
+            <Text style={styles.linkText}> Find Fundraising Tips </Text>
           </View>
-          <Image
-            source={require("../../images/Arrow5.png")}
-            style={styles.arrowImage}
-            resizeMode="contain"
-          />
+          
         </TouchableOpacity>
 
         {/* donor drive check your progress button*/}
@@ -104,90 +98,9 @@ export default function Donate({ navigation }) {
           <View style={styles.linkTextContainer}>
             <Text style={styles.linkText}> Check Your Progress </Text>
           </View>
-          <Image
-            source={require("../../images/Arrow5.png")}
-            style={styles.arrowImage}
-            resizeMode="contain"
-          />
         </TouchableOpacity>
-
-        {/* Contact Footer bar*/}
-
-        {/* Contact Us button */}
-        <TouchableOpacity
-          style={styles.button2}
-          accessibilityLabel="Go to the contact info page"
-          onPress={() =>
-            navigation.navigate("Link", {
-              link: { uri: "https://sf.iupui.edu/jagathon/contact-us.html" },
-            })
-          }
-        >
-          <Text style={styles.linkText}> Contact Us</Text>
-        </TouchableOpacity>
-
-        {/* bar to hold social media links */}
-        <View style={styles.socialNav}>
-          {/* twitter */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://twitter.com/IUPUIdm" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/twittericon.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Facebook */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://www.facebook.com/JagathonIUPUI/" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/facebook.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Instagram */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://www.instagram.com/iupuidm/" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/instagramicon.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Website */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://sf.iupui.edu/jagathon/index.html" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/iu.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
         </View>
+        
       </ScrollView>
     </View>
   );
@@ -198,32 +111,32 @@ const styles = StyleSheet.create({
   container: {
     alignSelf: "stretch",
     flex: 1,
+    backgroundColor: Styles.colors.blue,
   },
   header: {
     alignSelf: "stretch",
-    backgroundColor: Styles.colors.red,
-    height: 50,
+    height: Platform.OS === "ios" ? 134 + Constants.statusBarHeight : 134,
     zIndex: 100,
+    justifyContent: "center",
   },
-  headingText: {
+  title: {
     color: Styles.colors.white,
-    fontSize: 36,
-    alignSelf: "stretch",
-    backgroundColor: Styles.colors.red,
-    zIndex: 100,
-    paddingTop: 5,
-    paddingLeft: 13,
-    fontFamily: "Coaster",
+    fontFamily: "BentonSansBold",
+    fontSize: 24,
+    textTransform: "uppercase",
+    alignSelf: "center",
+    marginTop: 20,
+    marginBottom: 20,
   },
   headerImage: {
-    height: 40,
-    width: 160,
+    height: 87,
+    width: 337,
     alignSelf: "center",
-    marginBottom: 5,
+    marginTop: Platform.OS === "ios" ? Constants.statusBarHeight - 5 : 0,
   },
   button: {
     height: 50,
-    backgroundColor: Styles.colors.purple,
+    backgroundColor: Styles.colors.white,
     alignItems: "center",
     justifyContent: "center",
     height: 50,
@@ -232,110 +145,45 @@ const styles = StyleSheet.create({
   },
   link: {
     alignSelf: "stretch",
+    marginTop: 10,
+    marginBottom: 5,
+    marginLeft: 15,
+    marginRight: 15,
     padding: 30,
-    paddingTop: 10,
-    paddingBottom: 10,
-    backgroundColor: Styles.colors.red,
+    paddingTop: 15,
+    paddingBottom: 15,
+    backgroundColor: Styles.colors.white,
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 5,
-    marginBottom: 5,
+    justifyContent: "center",
   },
   linkTextContainer: {
     paddingTop: 4,
   },
   linkText: {
-    color: Styles.colors.white,
     fontSize: 18,
-    fontWeight: "bold",
-  },
-  arrowImage: {
-    width: 50,
-    alignSelf: "center",
-  },
-  tabletFlex: {
-    flexDirection:
-      Dimensions.get("window").width > 500 ? "row-reverse" : "column",
-    height: Dimensions.get("window").width > 500 ? "50%" : "auto",
-  },
-  heading: {
-    flex: 2,
-    alignSelf: "stretch",
-    height: Dimensions.get("window").width > 500 ? "100%" : 200,
-    resizeMode: "cover",
-    justifyContent: "flex-end",
-    zIndex: 100,
-  },
-  donateContainer: {
-    flex: 2,
-    // height: "50%"
-  },
-  headingImage: {
-    height: 250,
-    width: 470,
-    marginTop: -200,
-    // marginBottom: -230,
-    transform: [{ rotate: "300deg" }, { scale: (0.85, 0.85) }],
-    alignSelf: "flex-end",
-    marginRight: -150,
+    fontFamily: "BentonSansBold",
+    color: Styles.colors.black,
   },
   donateText: {
-    zIndex: 100,
-    padding: 40,
-    fontSize: 20,
+    paddingRight: "7.5%",
+    paddingLeft: "7.5%",
+    fontFamily: "HelveticaNeue",
+    color: Styles.colors.white,
+    fontSize: 14,
+    paddingTop: 20,
+    paddingBottom: 37,
+  },
+  donateLinksContainer: {
+    marginTop: 145,
+  },
+  donateLinksText: {
+    paddingRight: "19.75%",
+    paddingLeft: "19.75%",
+    fontFamily: "HelveticaNeue",
+    color: Styles.colors.white,
+    fontSize: 14,
+    paddingBottom: 20,
     textAlign: "center",
-    maxWidth: 550,
-    alignSelf: "center",
-    fontFamily: "TimesSS",
-  },
-  donate: {
-    backgroundColor: Styles.colors.red,
-    paddingTop: 10,
-    width: 200,
-    borderRadius: 15,
-    alignItems: "center",
-    alignSelf: "center",
-    zIndex: 100,
-  },
-  donateButton: {
-    color: Styles.colors.white,
-    fontSize: 40,
-    fontFamily: "HoneyCandy",
-  },
-  button2: {
-    height: 50,
-    backgroundColor: Styles.colors.red,
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 0,
-    marginTop: 5,
-  },
-  linkText: {
-    color: Styles.colors.white,
-    fontSize: 33,
-    fontFamily: "HoneyCandy",
-    //fontWeight: "bold",
-  },
-  socialNav: {
-    alignSelf: "stretch",
-    flex: 1,
-    flexDirection: "row",
-    backgroundColor: Styles.colors.grey,
-    alignItems: "center",
-    height: 50,
-    padding: 30,
-    paddingLeft: 50,
-    paddingRight: 50,
-    justifyContent: "center",
-  },
-  socialLink: {
-    height: 30,
-    width: 30,
-    margin: 10,
-  },
-  socialImage: {
-    height: 30,
-    width: 30,
   },
 });

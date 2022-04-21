@@ -4,8 +4,8 @@ export const Styles = {
   colors: {
     red: "#A83D4A",
     cyan: "#85D3D3", //old: #78cfd2
-    yellow: "#F4CE82", //old: #edc05c
-    blue: "#4E5893", //old: #8dc8ba
+    yellow: "#D1A254",
+    blue: "#2C5C93",
     orange: "#ed9780",
     purple: "#9F74A8", //old: #7871b4 
     pink: "#e571b4",

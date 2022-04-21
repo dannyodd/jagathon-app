@@ -32,7 +32,6 @@ export default function Event(props) {
           title: props.title,
           content: props.content,
           date: props.date,
-          image: props.img,
           reg: props.reg,
           link: props.link,
         })

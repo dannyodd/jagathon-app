@@ -22,7 +22,6 @@ export default function Notification(props) {
       {/* heading with imported props from firebase notifications for title and date */}
       <View style={styles.header}>
         <Text style={styles.headingText}>{props.title}</Text>
-        <Text style={styles.dateText}>{props.date}</Text>
       </View>
 
       {/* body of the notification from firebase */}
@@ -35,10 +34,10 @@ export default function Notification(props) {
 const styles = StyleSheet.create({
   container: {
     alignSelf: "stretch",
-    backgroundColor: Styles.colors.greyOp,
+    backgroundColor: Styles.colors.white,
     zIndex: 100,
     padding: 10,
-    margin: 10,
+    margin: 15,
     marginBottom: 5,
   },
   header: {
@@ -48,20 +47,16 @@ const styles = StyleSheet.create({
   },
   headingText: {
     color: Styles.colors.black,
-    fontSize: 20,
-    fontWeight: "bold",
+    fontSize: 14,
+    fontFamily: "BentonSansBold",
     flex: 2,
-  },
-  dateText: {
-    fontSize: 16,
-    color: Styles.colors.black,
-    flex: 0,
-    alignSelf: "flex-end",
+    textAlign: "center",
   },
   contentText: {
-    fontSize: 16,
+    fontSize: 14,
     color: Styles.colors.black,
+    fontFamily: "BentonSans",
     padding: 10,
-    paddingLeft: 0,
+    textAlign: "center",
   },
 });

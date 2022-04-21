@@ -19,7 +19,7 @@ import { Styles } from "../../Styles/Styles";
 //you must pass navigation into the Event function to use the navigation features, as well as the route for similar reasons
 export default function Event({ route, navigation }) {
   // use the route to import the params sent via the link (event data passed from the homepage)
-  const { title, content, date, image, reg, link } = route.params;
+  const { title, content, date, reg, link } = route.params;
   return (
     // entire page wrapped in this view
     <View style={styles.container}>
@@ -33,16 +33,9 @@ export default function Event({ route, navigation }) {
       <ScrollView style={styles.eventContainer}>
         {/* Styles to put the image on the right on wider screens */}
         <View style={styles.tabletFlex}>
-          {/* event image imported from json data from LiveWhale and formatted correctly in Home component (passed as a prop in the route params) */}
-          <ImageBackground source={image} style={styles.aboutImg} />
 
           {/* event details*/}
           <View style={styles.eventHolder}>
-            {/* confetti image */}
-            <ImageBackground
-              source={require("../../images/confetti.png")}
-              style={styles.headingImage}
-            />
             {/* title and date side by side from props*/}
             <View style={styles.head}>
               <Text style={styles.text}>{title}</Text>
@@ -83,84 +76,6 @@ export default function Event({ route, navigation }) {
             <Text style={styles.homeText}> RSVP </Text>
           </TouchableOpacity>
         )}
-
-        {/* Contact Footer bar*/}
-
-        {/* Contact Us button */}
-        <TouchableOpacity
-          style={styles.button2}
-          accessibilityLabel="Go to the contact info page"
-          onPress={() =>
-            navigation.navigate("Link", {
-              link: { uri: "https://sf.iupui.edu/jagathon/contact-us.html" }
-            })
-          }
-        >
-          <Text style={styles.linkText}> Contact Us</Text>
-        </TouchableOpacity>
-
-        {/* bar to hold social media links */}
-        <View style={styles.socialNav}>
-          {/* twitter */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://twitter.com/IUPUIdm" }
-              })
-            }
-          >
-            <Image
-              source={require("../../images/twittericon.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Facebook */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://www.facebook.com/JagathonIUPUI/" }
-              })
-            }
-          >
-            <Image
-              source={require("../../images/facebook.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Instagram */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://www.instagram.com/iupuidm/" }
-              })
-            }
-          >
-            <Image
-              source={require("../../images/instagramicon.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Website */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://sf.iupui.edu/jagathon/index.html" }
-              })
-            }
-          >
-            <Image
-              source={require("../../images/iu.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-        </View>
       </ScrollView>
     </View>
   );
