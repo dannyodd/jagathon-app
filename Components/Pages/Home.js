@@ -17,15 +17,8 @@ import Constants from "expo-constants";
 // color sheet import
 import { Styles } from "../../Styles/Styles";
 
-// import HomeEvent component to display the event buttons
-import HomeEvent from "./HomeEvent";
-
 // import expo fonts features
 import * as Font from "expo-font";
-
-// import styled text
-import FancyFont from "../../Styles/FancyFont";
-// import { url } from "inspector";
 
 //you must pass navigation into the Home function to use the navigation features
 export default function Home({ navigation }) {
@@ -52,108 +45,106 @@ export default function Home({ navigation }) {
   };
 
   return (
-    // entire page wrapped in this view
-
+    // Entire page wrapped in this view
     <View style={styles.container}>
+      {/* Background image - Element wraps around page content */}
       <ImageBackground
       source={require("../../images/home.jpg")}
       style={styles.backgroundImage}>
+        {/* Transparent overlay for background image */}
         <View style={styles.overlay}/>
-      {/* top bar */}
-      <View style={styles.header}>
-        {/* logo image */}
-        <Image
-          source={require("../../images/jagathonLogoWhite.png")}
-          style={styles.headerImage}
-        />
-      </View>
-      {/* Main page text content */}
-      <View style={styles.homeBody}>
-        <Text style={styles.homeBodyHeader}>Welcome</Text>
-        <Text style={styles.homeBodyText}>Founded in the 2001-2002 school year, Jagathon has raised over $3 Million for
-          Riley Hospital for Children, Indiana's Children's Miracle Network Hospital.
-        </Text>
-        <Text style={styles.homeBodyLink}
-        onPress={() =>
-          navigation.navigate("Link", {
-            link: { uri: "https://sf.iupui.edu/jagathon/about-us.html" },
-          })
-        }>Learn more</Text>
-        <Text style={styles.linkText}
-        onPress={() =>
-          navigation.navigate("Link", {
-            link: { uri: "https://sf.iupui.edu/jagathon/contact-us.html" },
-          })
-        }>Contact us</Text>
-        <View style={styles.socialNav}>
-          {/* twitter */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://twitter.com/IUPUIdm" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/twittericon.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Facebook */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://www.facebook.com/JagathonIUPUI/" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/facebook.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Instagram */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://www.instagram.com/iupuidm/" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/instagramicon.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
-
-          {/* Website */}
-          <TouchableOpacity
-            style={styles.socialLink}
-            onPress={() =>
-              navigation.navigate("Link", {
-                link: { uri: "https://sf.iupui.edu/jagathon/index.html" },
-              })
-            }
-          >
-            <Image
-              source={require("../../images/iu.png")}
-              style={styles.socialImage}
-            />
-          </TouchableOpacity>
+        {/* Page header */}
+        <View style={styles.header}>
+          {/* Logo image */}
+          <Image
+            source={require("../../images/jagathonLogoWhite.png")}
+            style={styles.headerImage}
+          />
         </View>
-      </View>
+        {/* Main page content */}
+        <View style={styles.homeBody}>
+          <Text style={styles.homeBodyHeader}>Welcome</Text>
+          <Text style={styles.homeBodyText}>Founded in the 2001-2002 school year, Jagathon has raised over $3 Million for
+            Riley Hospital for Children, Indiana's Children's Miracle Network Hospital.
+          </Text>
+          {/* Link to Jagathon website about page */}
+          <Text style={styles.homeBodyLink}
+          onPress={() =>
+            navigation.navigate("Link", {
+              link: { uri: "https://sf.iupui.edu/jagathon/about-us.html" },
+            })
+          }>Learn more</Text>
+          {/* Link to Jagathon website contact page */}
+          <Text style={styles.linkText}
+          onPress={() =>
+            navigation.navigate("Link", {
+              link: { uri: "https://sf.iupui.edu/jagathon/contact-us.html" },
+            })
+          }>Contact us</Text>
+          {/* Social Media Links */}
+          <View style={styles.socialNav}>
+            {/* twitter */}
+            <TouchableOpacity
+              style={styles.socialLink}
+              onPress={() =>
+                navigation.navigate("Link", {
+                  link: { uri: "https://twitter.com/IUPUIdm" },
+                })
+              }
+            >
+              <Image
+                source={require("../../images/twittericon.png")}
+                style={styles.socialImage}
+              />
+            </TouchableOpacity>
 
+            {/* Facebook */}
+            <TouchableOpacity
+              style={styles.socialLink}
+              onPress={() =>
+                navigation.navigate("Link", {
+                  link: { uri: "https://www.facebook.com/JagathonIUPUI/" },
+                })
+              }
+            >
+              <Image
+                source={require("../../images/facebook.png")}
+                style={styles.socialImage}
+              />
+            </TouchableOpacity>
 
+            {/* Instagram */}
+            <TouchableOpacity
+              style={styles.socialLink}
+              onPress={() =>
+                navigation.navigate("Link", {
+                  link: { uri: "https://www.instagram.com/iupuidm/" },
+                })
+              }
+            >
+              <Image
+                source={require("../../images/instagramicon.png")}
+                style={styles.socialImage}
+              />
+            </TouchableOpacity>
 
-              {/* bar to hold social media links */}
-              
-      </ImageBackground>
-      
+            {/* Website */}
+            <TouchableOpacity
+              style={styles.socialLink}
+              onPress={() =>
+                navigation.navigate("Link", {
+                  link: { uri: "https://sf.iupui.edu/jagathon/index.html" },
+                })
+              }
+            >
+              <Image
+                source={require("../../images/iu.png")}
+                style={styles.socialImage}
+              />
+            </TouchableOpacity>
+          </View>
+        </View>              
+      </ImageBackground>  
     </View>
   );
 }
@@ -220,13 +211,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 40, 
   },
-  homeTextShadow: {
-    color: Styles.colors.white,
-    fontSize: 26,
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 10,
-    textShadowColor: Styles.colorsOp.black,
-  },
   socialNav: {
     alignSelf: "stretch",
     flex: 1,
@@ -258,14 +242,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textTransform: "uppercase",
     marginTop: 200,
-  },
-  dropShadow: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 0,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 5,
   },
 });

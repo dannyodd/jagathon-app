@@ -57,12 +57,10 @@ export default function Event(props) {
 const styles = StyleSheet.create({
   container: {
     alignSelf: "stretch",
-    backgroundColor: Styles.colors.greyOp,
     zIndex: 100,
     margin: 10,
     marginBottom: 5,
     borderWidth: 3,
-    borderColor: Styles.colors.cyan,
   },
   header: {
     flex: 1,
@@ -92,7 +90,6 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 50,
-    backgroundColor: Styles.colors.cyan,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -100,6 +97,6 @@ const styles = StyleSheet.create({
     color: Styles.colors.white,
     fontSize: 30,
     paddingTop: 8,
-    fontFamily: "HoneyCandy",
+    fontFamily: "BentonSans",
   },
 });

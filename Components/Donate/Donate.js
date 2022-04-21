@@ -21,7 +21,7 @@ export default function Donate({ navigation }) {
   return (
     // entire page wrapped in this view
     <View style={styles.container}>
-      {/* top of the component/two color bars */}
+      {/* page header */}
       <View style={styles.header}>
         {/* logo image */}
         <Image
@@ -32,10 +32,9 @@ export default function Donate({ navigation }) {
 
       {/* scrollable content of the page - allows top bar to have fixed position */}
       <ScrollView>
-        {/* Styles to put the image on the right on wider screens */}
-        
+        {/* Title text */}
         <Text style={styles.title}>Fundraising</Text>
-
+          {/* first content block - contains donor drive login link */}
           <View style={styles.donateContainer}>
             <Text style={styles.donateText}>
                 Whether it's five dollars, or five hundred dollars, all the money
@@ -43,7 +42,9 @@ export default function Donate({ navigation }) {
                 donation.
             </Text>
 
-            {/* donor drive login btton */}
+            {/* ******************************************** */}
+            {/* donor drive login button - UPDATE URL YEARLY */}
+            {/* ******************************************** */}
             <TouchableOpacity
               style={styles.link}
               accessibilityLabel="Go to the donate page"
@@ -61,46 +62,46 @@ export default function Donate({ navigation }) {
               </View>
             </TouchableOpacity>
           </View>
-        
+        {/* Second content block - contains links for fundraising tips and progress tracker */}
         <View style={styles.donateLinksContainer}>
-        <Text style={styles.donateLinksText}>
-                To learn more about fundraising for Jagathon, click the links below.
-            </Text>
-              {/* fundraising tips button */}
-        <TouchableOpacity
-          style={styles.link}
-          accessibilityLabel="Go to the fundraising tips page"
-          onPress={() =>
-            navigation.navigate("Link", {
-              link: { uri: "https://sf.iupui.edu/jagathon/fundraising.html" },
-            })
-          }
-        >
-          <View style={styles.linkTextContainer}>
-            <Text style={styles.linkText}> Find Fundraising Tips </Text>
-          </View>
-          
-        </TouchableOpacity>
+          <Text style={styles.donateLinksText}>
+            To learn more about fundraising for Jagathon, click the links below.
+          </Text>
+          {/* fundraising tips button */}
+          <TouchableOpacity
+            style={styles.link}
+            accessibilityLabel="Go to the fundraising tips page"
+            onPress={() =>
+              navigation.navigate("Link", {
+                link: { uri: "https://sf.iupui.edu/jagathon/fundraising.html" },
+              })
+            }
+          >
+            <View style={styles.linkTextContainer}>
+              <Text style={styles.linkText}> Find Fundraising Tips </Text>
+            </View>
+          </TouchableOpacity>
 
-        {/* donor drive check your progress button*/}
-        <TouchableOpacity
-          style={styles.link}
-          accessibilityLabel="Go to the Donor Drive page to check your progress"
-          onPress={() =>
-            navigation.navigate("Link", {
-              link: {
-                uri:
-                  "https://events.dancemarathon.com/index.cfm?fuseaction=donordrive.participantList&eventID=4704",
-              },
-            })
-          }
-        >
-          <View style={styles.linkTextContainer}>
-            <Text style={styles.linkText}> Check Your Progress </Text>
-          </View>
-        </TouchableOpacity>
-        </View>
-        
+          {/* ********************************************************* */}
+          {/* donor drive check your progress button - UPDATE URL YEARLY*/}
+          {/* ********************************************************* */}
+          <TouchableOpacity
+            style={styles.link}
+            accessibilityLabel="Go to the Donor Drive page to check your progress"
+            onPress={() =>
+              navigation.navigate("Link", {
+                link: {
+                  uri:
+                    "https://events.dancemarathon.com/index.cfm?fuseaction=donordrive.participantList&eventID=4704",
+                },
+              })
+            }
+          >
+            <View style={styles.linkTextContainer}>
+              <Text style={styles.linkText}> Check Your Progress </Text>
+            </View>
+          </TouchableOpacity>
+        </View>    
       </ScrollView>
     </View>
   );

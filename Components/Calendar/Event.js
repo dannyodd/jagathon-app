@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
   },
   header: {
     alignSelf: "stretch",
-    backgroundColor: Styles.colors.orange,
     height: 50,
     zIndex: 100
   },
@@ -97,11 +96,10 @@ const styles = StyleSheet.create({
     color: Styles.colors.white,
     fontSize: 33,
     alignSelf: "stretch",
-    backgroundColor: Styles.colorsOp.orange,
     zIndex: 100,
     paddingTop: 5,
     paddingLeft: 13,
-    fontFamily: "HoneyCandy"
+    fontFamily: "BentonSansBold"
   },
   eventHolder: {
     padding: 10,
@@ -155,7 +153,6 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 55,
-    backgroundColor: Styles.rgba.orange,
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "stretch",
@@ -168,18 +165,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignSelf: "stretch",
     marginBottom: 0,
-    backgroundColor: Styles.colors.orange
   },
   homeText: {
     color: Styles.colors.white,
     fontSize: 30,
     paddingTop: 10,
-    fontFamily: "HoneyCandy"
+    fontFamily: "BentonSans"
   },
   linkText: {
     color: Styles.colors.white,
     fontSize: 18,
-    fontWeight: "bold"
+    fontFamily: "BentonSansBold",
   },
   socialNav: {
     alignSelf: "stretch",

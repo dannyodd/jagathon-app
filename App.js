@@ -72,9 +72,6 @@ LogBox.ignoreLogs(["Setting a timer"]);
  */
 
 let customFonts = {
-  HoneyCandy: require("./assets/fonts/HoneyCandy-Regular.ttf"),
-  TimesSS: require("./assets/fonts/TIMESS__.ttf"),
-  Coaster: require("./assets/fonts/CoasterBlack.ttf"),
   BentonSansBold: require("./assets/fonts/BentonSans_Bold.otf"),
   BentonSans: require("./assets/fonts/BentonSans_Regular.otf"),
   HelveticaNeue: require("./assets/fonts/HelveticaNeue.ttf"),
@@ -213,7 +210,7 @@ async function sendPushNotification(expoPushToken) {
 async function registerForPushNotificationsAsync() {
   let token;
   // run if it is a device (not emulator) and not on web
-  if (Constants.isDevice && Platform.OS !== "web") {
+  if (Device.isDevice && Platform.OS !== "web") {
     // get and set existing notifications permissions status
     const { status: existingStatus } = await Permissions.getAsync(
       Permissions.NOTIFICATIONS
@@ -328,15 +325,12 @@ export default function App() {
     {
       /*
        *
-       *   Load HoneyCandy font
+       *   Load custom fonts; BentonSansBold, BentonSans, HelveticaNeue
        *
        */
     }
     async function loadFont() {
       return await Font.loadAsync({
-        HoneyCandy: require("./assets/fonts/HoneyCandy-Regular.ttf"),
-        TimesSS: require("./assets/fonts/TIMESS__.ttf"),
-        Coaster: require("./assets/fonts/CoasterBlack.ttf"),
         BentonSansBold: require("./assets/fonts/BentonSans_Bold.otf"),
         BentonSans: require("./assets/fonts/BentonSans_Regular.otf"),
         HelveticaNeue: require("./assets/fonts/HelveticaNeue.ttf"),
