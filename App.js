@@ -210,7 +210,7 @@ async function sendPushNotification(expoPushToken) {
 async function registerForPushNotificationsAsync() {
   let token;
   // run if it is a device (not emulator) and not on web
-  if (Device.isDevice && Platform.OS !== "web") {
+  if (Constants.Device.isDevice && Platform.OS !== "web") {
     // get and set existing notifications permissions status
     const { status: existingStatus } = await Permissions.getAsync(
       Permissions.NOTIFICATIONS
