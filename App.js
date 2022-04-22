@@ -34,7 +34,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import "react-native-gesture-handler";
 
 //expo and firebase notification imports
-import Constants from "expo-constants";
+// import Constants from "expo-constants";
 import * as Notifications from "expo-notifications";
 import * as Permissions from "expo-permissions";
 import * as firebase from "firebase";
@@ -207,7 +207,7 @@ async function sendPushNotification(expoPushToken) {
 */
 
 // Register device for push notifications, returns device token
-async function registerForPushNotificationsAsync() {
+/* async function registerForPushNotificationsAsync() {
   let token;
   // run if it is a device (not emulator) and not on web
   if (Constants.Device.isDevice && Platform.OS !== "web") {
@@ -245,7 +245,7 @@ async function registerForPushNotificationsAsync() {
   }
   console.log(token);
   return token;
-}
+} */
 
 // Notificaiton handler
 Notifications.setNotificationHandler({
